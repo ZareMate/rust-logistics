@@ -3,10 +3,10 @@
     %% Class Definitions
     classDef root fill:#ff0000,stroke:#000,stroke-width:2,color:#fff; %% Red background, white text
     classDef branch fill:#000000,stroke:#000,stroke-width:2,color:#fff; %% Black background, white text
-    classDef wind fill:#808080,stroke:#000,stroke-width:2,color:#fff,shape:circle; %% Grey background, white text, circle
-    classDef solar fill:#ffff00,stroke:#000,stroke-width:2,color:#000; %% Yellow background, black text
-    classDef batt fill:#add8e6,stroke:#000,stroke-width:2,color:#000,shape:database; %% Light blue background, black text
-    classDef splitter fill:#d3d3d3,stroke:#000,stroke-width:2,color:#000; %% Light grey background, black text
+    classDef wind fill:gray,stroke:#000,stroke-width:2,color:#fff; %% Grey background, white text circle
+    classDef solar fill:yellow,stroke:#000,stroke-width:2,color:#000; %% Yellow background, black text
+    classDef batt fill:#add8e6,stroke:#000,stroke-width:2,color:#000; %% Light blue background, black text
+    classDef splitter fill:gray,stroke:#000,stroke-width:2,color:#000; %% Light grey background, black text
 
     %% Graph Nodes
     Wind1[Wind] -->| | Root1[Root];
