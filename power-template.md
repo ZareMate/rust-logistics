@@ -16,7 +16,7 @@
     Solar1 -->| | Root1;
     Root1 -->| | Splitter1;
     Splitter1 -->| | Batt1;
-    Batt1 -->|100| Root1;
+    Batt1 -->|100| Branch1;
 
     %% Link Styles
     linkStyle 0,1,2,3,4 stroke:red,stroke-width:2;
