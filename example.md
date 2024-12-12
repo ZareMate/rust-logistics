@@ -8,24 +8,41 @@
     classDef solar fill:yellow,stroke:#000,stroke-width:2,color:#000; %% Yellow background, black text
     classDef batt fill:#add8e6,stroke:#000,stroke-width:2,color:#000; %% Light blue background, black text
     classDef splitter fill:gray,stroke:#000,stroke-width:2,color:#000; %% Light grey background, black text
+  
+    Wind1((Wind))
+    Wind2((Wind))
+    Solar1[Solar]
+    Solar2[Solar]
+    Root1(Root)
+    Root2(Root)
+    Root3(Root)
+    Root4(Root)
+    Splitter1([Splitter])
+    Batt1[(Batt)]
+    Batt2[(Batt)]
+    Branch1{{Branch}}
+    Branch2{{Branch}}
+    Branch3{{Branch}}
+    Branch4{{Branch}}
+    Branch5{{Branch}}
 
     %% Graph Nodes
-    Wind1((Wind)) -->| | Root1([Root]);
-    Wind2((Wind)) -->| | Root1([Root]);
-    Solar1[Solar] -->| | Root2([Root]);
-    Solar2[Solar] -->| | Root2([Root]);
-    Root1(Root) -->| | Root3(Root);
-    Root2(Root) -->| | Root3(Root);
-    Root3(Root) -->| | Splitter1([Splitter]);
-    Splitter1([Splitter]) -->| | Batt1(Batt);
-    Splitter1([Splitter]) -->| | Batt2(Batt);
-    Batt1[(Batt)] -->|100| Root4(Root);
-    Batt2[(Batt)] -->|100| Root4(Root);
-    Root4(Root) -->|200| Branch1{{Branch}};
-    Branch1{{Branch}} --> Branch2{{Branch}};
-    Branch2{{Branch}} --> Branch3{{Branch}};
-    Branch3{{Branch}} --> Branch4{{Branch}};
-    Branch4{{Branch}} --> Branch5{{Branch}};
+    Wind1 -->| | Root1;
+    Wind2 -->| | Root1;
+    Solar1 -->| | Root2;
+    Solar2 -->| | Root2;
+    Root1 -->| | Root3;
+    Root2 -->| | Root3;
+    Root3 -->| | Splitter1;
+    Splitter1 -->| | Batt1;
+    Splitter1 -->| | Batt2;
+    Batt1 -->|100| Root4;
+    Batt2 -->|100| Root4;
+    Root4 -->|200| Branch1;
+    Branch1 --> Branch2;
+    Branch2 --> Branch3;
+    Branch3 --> Branch4;
+    Branch4 --> Branch5;
 
     %% Link Styles
     linkStyle 0,1,2,3,4,5,6,11,12,13,14,15 stroke:red,stroke-width:2;
