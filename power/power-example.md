@@ -1,12 +1,11 @@
 ```mermaid
-  %%{init: {'theme':'base'}}%%
   graph TD;
     %% Class Definitions
     classDef root fill:#ff0000,stroke:#000,stroke-width:2,color:#fff; %% Red background, white text
     classDef branch fill:#000000,stroke:#000,stroke-width:2,color:#fff; %% Black background, white text
     classDef wind fill:gray,stroke:#000,stroke-width:2,color:#fff; %% Grey background, white text circle
     classDef solar fill:yellow,stroke:#000,stroke-width:2,color:#000; %% Yellow background, black text
-    classDef batt fill:#add8e6,stroke:#000,stroke-width:2,color:#000; %% Light blue background, black text
+    classDef batt fill:blue,stroke:#000,stroke-width:2,color:#000; %% Light blue background, black text
     classDef splitter fill:gray,stroke:#000,stroke-width:2,color:#000; %% Light grey background, black text
   
     Wind1((Wind))

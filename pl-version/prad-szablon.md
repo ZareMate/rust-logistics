@@ -1,6 +1,6 @@
 ```mermaid
   graph TD;
-    %%{init: {'theme':'base'}}%%
+    %%{init: {'theme':'dark'}}%%
     %% Class Definitions
     classDef root fill:#ff0000,stroke:#000,stroke-width:2,color:#fff; %% Red background, white text
     classDef branch fill:#000000,stroke:#000,stroke-width:2,color:#fff; %% Black background, white text
@@ -9,11 +9,11 @@
     classDef batt fill:blue,stroke:#000,stroke-width:2,color:#000; %% Light blue background, black text
     classDef splitter fill:gray,stroke:#000,stroke-width:2,color:#000; %% Light grey background, black text
   
-    Wind1((Wind))
+    Wind1((Wiatrak))
     Solar1[Solar]
     Root1(Root)
     Splitter1([Splitter])
-    Batt1[(Batt)]
+    Batt1[(Batteria)]
     Branch1{{Branch}}
 
     %% Graph Nodes
