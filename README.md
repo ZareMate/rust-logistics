@@ -1,22 +1,16 @@
-## Colors
-* **Red**  
-  * **main power**  
-    * Generators  
-    * Batt  
-    * Root  
-    * Branch  
-* **Yellow**  
-  * Lights  
-* **White**  
-  * Turrets  
-* **Orange**  
-  * E-furnaces  
-* **Purple**  
-  * Logistics  
-    * Pipes  
-* **Pink**  
-  * Doors  
-* **Green**  
-  * Alarms
-* **Light blue**
-  * TBD
+# Directories
+* [Power instructions](./power)
+    * [Power template](./power/power-template.md)
+
+    * [Power example](./power/power-example.md)
+
+    * [Cable colors](./power/readme.md)
+
+* [Logistic instructions](./logistics)
+
+    * **To be done**
+
+* [Water instructions](./water)
+
+    * **To be done**
+    
