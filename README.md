@@ -1,10 +1,10 @@
 ## Colors
 * **Red**  
   * **main power**  
-    * generators  
-    * batt  
-    * root  
-    * branches  
+    * Generators  
+    * Batt  
+    * Root  
+    * Branch  
 * **Yellow**  
   * Lights  
 * **White**  
@@ -18,3 +18,5 @@
   * Doors  
 * **Green**  
   * Alarms
+* **Light blue**
+  * TBD
