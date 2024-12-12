@@ -23,9 +23,4 @@
 
     %% Class Assignments
     class Root1 root;
-    class Branch1 branch;
-    class Wind1 wind;
-    class Solar1 solar;
-    class Batt1 batt;
-    class Splitter1 splitter;
 ```
