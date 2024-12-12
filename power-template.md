@@ -1,5 +1,5 @@
 ```mermaid
-  %%{init: {'theme':'base'}}%%
+  %%{init: {'theme':'dark'}}%%
   graph TD;
     %% Class Definitions
     classDef root fill:#ff0000,stroke:#000,stroke-width:2,color:#fff; %% Red background, white text
