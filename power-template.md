@@ -19,7 +19,7 @@
     Batt1 -->|100| Root1;
 
     %% Link Styles
-    linkStyle 0,1,2,3,4,5 stroke:red,stroke-width:2;
+    linkStyle 0,1,2,3,4 stroke:red,stroke-width:2;
 
     %% Class Assignments
     class Root1 root;
