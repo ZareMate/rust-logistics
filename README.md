@@ -17,5 +17,4 @@
 * **Pink**  
   * Doors  
 * **Green**  
-  * Alarms  
-test
+  * Alarms
