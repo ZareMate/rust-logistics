@@ -1,4 +1,6 @@
 # Directories
+###### [PL version](./pl.md)
+---
 * [Power instructions](./power)
     * [Power template](./power/power-template.md)
 
