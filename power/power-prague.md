@@ -63,71 +63,86 @@
     Conveyor2(Conveyor)
 
     %% Power Source with failsafe
-    Wind1 -->|50-150| Switch1;
-    Switch1 -->|50-150| Branch1;
-    Branch1 -->|"99<br>Branch out"| OrGate1;
-    Branch1 -->|"0-50<br>Power out"| Branch2;
-    Branch2 -->|"1<br>Branch out<br>Block pass"| Blocker1; 
-    Branch2 -->|"0-49<br>Power Out"| Batt1;
-    Blocker1 -->|"100"| Branch3;
-    Branch3 -->|"99<br>Power out"| OrGate1;
-    Branch3 -->|"1<br>Branch out"| LightRed1;
-    Batt1 -->|"100<br>Power in"| Blocker1;
+    subgraph "Power Source with failsafe"
+      Wind1 -->|50-150| Switch1;
+      Switch1 -->|50-150| Branch1;
+      Branch1 -->|"99<br>Branch out"| OrGate1;
+      Branch1 -->|"0-50<br>Power out"| Branch2;
+      Branch2 -->|"1<br>Branch out<br>Block pass"| Blocker1; 
+      Branch2 -->|"0-49<br>Power Out"| Batt1;
+      Blocker1 -->|"100"| Branch3;
+      Branch3 -->|"99<br>Power out"| OrGate1;
+      Branch3 -->|"1<br>Branch out"| LightRed1;
+      Batt1 -->|"100<br>Power in"| Blocker1;
+    end
+
     OrGate1 -->|99| Branch4;
+
     %% Power Distribution
-    
-    Branch4 -->|"89<br>Power out"| Branch5;
-    Branch4 -->|"10<br>Branch out"| Turret1;
+    subgraph "Power Distribution"
+      subgraph "Core"
+        Branch4
+        Branch5
+        Branch6
+        Branch7
+        Branch8
+        Branch9
+        Branch10
+        Branch11
+      end
+      Branch4 -->|"89<br>Power out"| Branch5;
+      Branch5 -->|"79<br>Power out"| Branch6;
+      Branch6 -->|"74<br>Power out"| Branch7;
+      Branch7 -->|"72<br>Power out"| Branch8;
+      Branch8 -->|"54<br>Power out"| Branch9;
+      Branch9 -->|"46<br>Power out"| Branch10;
+      Branch10 -->|"26<br>Power out"| Branch11;
 
-    Branch5 -->|"79<br>Power out"| Branch6;
-    Branch5 -->|"10<br>Branch out"| Turret2;
+      Branch4 -->|"10<br>Branch out"| Turret1;
 
-    Branch6 -->|"74<br>Power out"| Branch7;
-    Branch6 -->|"5<br>Branch out"| Switch2;
-    Switch2 -->|5| CarLift1;
+      Branch5 -->|"10<br>Branch out"| Turret2;
 
-    Branch7 -->|"72<br>Power out"| Branch8;
-    Branch7 -->|"2<br>Branch out"| Conveyor1
-    Conveyor1 -->|1| Conveyor2;
+      Branch6 -->|"5<br>Branch out"| Switch2;
+      Switch2 -->|5| CarLift1;
 
-    Branch8 -->|"54<br>Power out"| Branch9;
-    Branch8 -->|"18<br>Branch out"| Switch3;
-    Switch3 -->|"18<br>Branch out"| Branch12;
-    Branch12 -->|"9<br>Power out"| Splitter1;
-    Branch12 -->|"9<br>Branch out"| Splitter2;
-    Splitter1 -->|3| Furnace1;
-    Splitter1 -->|3| Furnace2;
-    Splitter1 -->|3| Furnace3;
-    Splitter2 -->|3| Furnace4;
-    Splitter2 -->|3| Furnace5;
-    Splitter2 -->|3| Furnace6;
+      Branch7 -->|"2<br>Branch out"| Conveyor1
+      Conveyor1 -->|1| Conveyor2;
 
-    Branch9 -->|"46<br>Power out"| Branch10;
-    Branch9 -->|"8<br>Branch out"| Switch4;
-    Switch4 -->|8| Light1;
-    Light1 -->|7| Light2;
-    Light2 -->|6| Light3;
-    Light3 -->|5| Light4;
-    Light4 -->|4| Light5;
-    Light5 -->|3| Light6;
-    Light6 -->|2| Light7;
-    Light7 -->|1| Light8;
+      Branch8 -->|"18<br>Branch out"| Switch3;
+      Switch3 -->|"18<br>Branch out"| Branch12;
+      Branch12 -->|"9<br>Power out"| Splitter1;
+      Branch12 -->|"9<br>Branch out"| Splitter2;
+      Splitter1 -->|3| Furnace1;
+      Splitter1 -->|3| Furnace2;
+      Splitter1 -->|3| Furnace3;
+      Splitter2 -->|3| Furnace4;
+      Splitter2 -->|3| Furnace5;
+      Splitter2 -->|3| Furnace6;
 
-    Branch10 -->|"26<br>Power out"| Branch11;
-    Branch10 -->|"20<br>Branch out"| Switch5;
-    Switch5 -->|20| LightSearch1;
-    LightSearch1 -->|10| LightSearch2;
+      Branch9 -->|"8<br>Branch out"| Switch4;
+      Switch4 -->|8| Light1;
+      Light1 -->|7| Light2;
+      Light2 -->|6| Light3;
+      Light3 -->|5| Light4;
+      Light4 -->|4| Light5;
+      Light5 -->|3| Light6;
+      Light6 -->|2| Light7;
+      Light7 -->|1| Light8;
 
-    Branch11
-    Branch11 -->|"20<br>Branch out"| WeaponRack1;
+      Branch10 -->|"20<br>Branch out"| Switch5;
+      Switch5 -->|20| LightSearch1;
+      LightSearch1 -->|10| LightSearch2;
+
+      Branch11 -->|"20<br>Branch out"| WeaponRack1;
+    end
 
     %% Link Styles
-    linkStyle 0,1,2,3,9,10,11,13,15,18,21,32,42 stroke:red,stroke-width:2;
-    linkStyle 4,33,34,35,36,37,38,39,40,41,43,44,45,46 stroke:yellow,stroke-width:2;
-    linkStyle 22,23,24,25,26,27,28,29,30,31 stroke:orange,stroke-width:2;
-    linkStyle 19,20 stroke:purple,stroke-width:2;
-    linkStyle 16,17 stroke:lightblue,stroke-width:2;
-    linkStyle 12,14 stroke:white,stroke-width:2;
+    linkStyle 0,1,2,3,9,10,11,12,13,14,15,16,17 stroke:red,stroke-width:2;
+    linkStyle 4,34,35,36,37,38,39,40,41,42,43,44,45,46 stroke:yellow,stroke-width:2;
+    linkStyle 24,24,25,26,27,28,29,30,31,32,33 stroke:orange,stroke-width:2;
+    linkStyle 22,23 stroke:purple,stroke-width:2;
+    linkStyle 20,21 stroke:lightblue,stroke-width:2;
+    linkStyle 18,19 stroke:white,stroke-width:2;
     linkStyle 5 stroke:green,stroke-width:2;
     linkStyle 6,7,8 stroke:blue,stroke-width:2;
 
